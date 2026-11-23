@@ -1,0 +1,45 @@
+
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "automacao-dados"
+version = "0.3.0"
+description = "Plataforma de automacao e inteligencia de dados"
+requires-python = ">=3.13"
+dependencies = [
+    "pandas>=2.2,<3",
+    "openpyxl>=3.1,<4",
+    "XlsxWriter>=3.2,<4",
+    "streamlit>=1.40,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9,<10",
+    "ruff>=0.9",
+]
+
+[project.scripts]
+automacao-dados = "automacao_dados.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B", "UP"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

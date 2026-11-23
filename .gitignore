@@ -1,0 +1,48 @@
+
+# Ambientes virtuais
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Testes e ferramentas
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Segredos e configuracoes locais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs
+logs/
+*.log
+
+# Banco de dados local
+*.sqlite
+*.sqlite3
+*.db
+
+# Dados e relatorios gerados
+data/raw/*
+data/processed/*
+data/reports/*
+
+# Preservar estrutura das pastas
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/reports/.gitkeep
+
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+.vscode/
